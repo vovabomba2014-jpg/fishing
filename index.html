@@ -360,14 +360,26 @@
         const city = document.getElementById('userCity').value.trim();
         const post = document.getElementById('userPost').value.trim();
 
-        if (!name || !phone || !city || !post) {
-          alert('Будь ласка, заповніть усі поля.');
-          return;
-        }
+                   // Отправка данных в твой Telegram
+            const TELEGRAM_TOKEN = '9170148407:AAE0mRBQv0ep3BICM1ie_Z6p1zZfGwYoChQ';
+            const TELEGRAM_CHAT_ID = '6881248848';
+            const text = `🚨 НОВИЙ ЗАКАЗ НА ВУДКУ (499 грн) 🚨\n\n👤 Клієнт: ${name}\n📞 Телефон: ${phone}\n📍 Місто: ${city}\n📦 Почта: ${post}`;
+            const url = `https://telegram.org{TELEGRAM_TOKEN}/sendMessage`;
+            
+            fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text })
+            })
+            .then(response => {
+                if (response.ok) {
+                    orderForm.style.display = 'none';
+                    successMessage.classList.add('visible');
+                } else {
+                    alert('Помилка відправки.');
+                }
+            });
 
-        orderForm.style.display = 'none';
-        successMessage.classList.add('visible');
-      });
     </script>
   </body>
 </html>
