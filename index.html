@@ -7,47 +7,31 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; }
         body { background: #0b0f19; color: #fff; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 0; }
-        
         .wrapper { width: 100%; max-width: 450px; background: #111625; min-height: 100vh; display: flex; flex-direction: column; position: relative; padding-bottom: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.8); }
-        
-        /* Верхняя плашка */
         .top-banner { background: #1a233d; text-align: center; padding: 12px; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #ffcc00; border-bottom: 2px solid #24345d; }
-        
-        /* Главный заголовок */
         .main-header { text-align: center; margin: 20px 0 10px 0; }
         .main-header span { font-size: 0.9rem; color: #8a99ad; text-transform: uppercase; }
         .main-header h1 { font-size: 2rem; color: #fff; font-weight: 800; margin-top: 5px; letter-spacing: 1px; }
-
-        /* Контейнер с фото и стикером скидки */
         .image-container { width: 100%; position: relative; background: #fff; padding: 10px; display: flex; justify-content: center; }
         .main-img { width: 100%; height: auto; max-height: 300px; object-fit: contain; }
         .discount-badge { position: absolute; top: 15px; right: 15px; background: #e52e2e; color: #fff; font-weight: bold; padding: 6px 15px; font-size: 0.9rem; transform: rotate(15deg); box-shadow: 0 4px 10px rgba(0,0,0,0.3); border-radius: 4px; }
-
-        /* Блок характеристик (как на скрине) */
         .features-container { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
         .feature-box { background: #1a233d; border-left: 4px solid #0076ff; padding: 12px 15px; border-radius: 0 8px 8px 0; }
         .feature-box .title { font-size: 0.8rem; color: #00ffcc; text-transform: uppercase; font-weight: bold; }
         .feature-box .value { font-size: 1.1rem; color: #fff; font-weight: 600; margin-top: 3px; }
-
-        /* Цены */
         .price-container { display: flex; justify-content: space-around; align-items: center; margin: 20px 15px; background: #161f33; padding: 15px; border-radius: 12px; border: 1px solid #24345d; }
         .price-box { text-align: center; }
         .price-box span { font-size: 0.8rem; color: #8a99ad; display: block; margin-bottom: 5px; }
         .old-price { font-size: 1.2rem; color: #999; text-decoration: line-through; font-weight: 600; }
         .current-price { font-size: 1.8rem; color: #ffcc00; font-weight: 800; }
-
-        /* Кнопка действия */
         .action-btn { background: #ffcc00; color: #000; border: none; padding: 16px; width: calc(100% - 30px); margin: 0 auto; border-radius: 8px; font-size: 1.2rem; font-weight: 800; text-transform: uppercase; cursor: pointer; text-align: center; transition: background 0.2s; box-shadow: 0 4px 15px rgba(255,204,0,0.3); display: block; }
         .action-btn:hover { background: #e6b800; }
-
-        /* Скрытая анкета заказа (открывается при нажатии) */
         .order-form-container { display: none; padding: 20px; background: #161f33; margin: 15px; border-radius: 12px; border: 1px solid #0076ff; }
         .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }
         .form-group label { font-size: 0.9rem; color: #8a99ad; font-weight: 600; }
         .form-control { width: 100%; padding: 12px; background: #0b0f19; border: 1px solid #24345d; border-radius: 6px; color: #fff; font-size: 1rem; outline: none; }
         .form-control:focus { border-color: #0076ff; }
         .submit-btn { background: #28a745; color: #fff; border: none; padding: 14px; border-radius: 6px; font-size: 1.1rem; font-weight: bold; cursor: pointer; width: 100%; text-transform: uppercase; }
-        
         .success-overlay { display: none; text-align: center; padding: 30px 15px; background: #161f33; margin: 15px; border-radius: 12px; border: 1px solid #28a745; }
         .success-overlay h2 { color: #28a745; font-size: 1.4rem; }
     </style>
@@ -56,7 +40,7 @@
 
     <div class="wrapper">
         <div class="top-banner">Один з найпопулярніших товарів у 2026 році</div>
-        
+
         <div class="main-header">
             <span>Автоматична снасть</span>
             <h1>ВУДКА СВ-1</h1>
@@ -64,10 +48,9 @@
 
         <div class="image-container">
             <span class="discount-badge">-35% ЗНИЖКА</span>
-            <img src="https://postimg.cc" alt="Вудка" class="main-img">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Вудка" class="main-img">
         </div>
 
-        <!-- Блок характеристик как на макете ножа -->
         <div class="features-container">
             <div class="feature-box">
                 <div class="title">МЕХАНІЗМ ПІД СТАЛЬ</div>
@@ -94,13 +77,11 @@
             </div>
         </div>
 
-        <!-- Кнопка действия -->
-        <button class="action-btn" id="openFormBtn" onclick="showForm()">Зробити замовлення</button>
+        <button class="action-btn" id="openFormBtn" type="button">Зробити замовлення</button>
 
-        <!-- Анкета, которая появляется снизу -->
         <div class="order-form-container" id="orderFormBlock">
             <h3 style="margin-bottom: 15px; text-align: center; color: #ffcc00;">Данні для доставки:</h3>
-            <form onsubmit="sendOrder(event)">
+            <form id="orderForm">
                 <div class="form-group">
                     <label>Прізвище та Ім'я</label>
                     <input type="text" id="userName" class="form-control" placeholder="Іванов Іван" required>
@@ -121,7 +102,6 @@
             </form>
         </div>
 
-        <!-- Успешный экран -->
         <div class="success-overlay" id="successScreen">
             <h2>🎉 Замовлення прийнято!</h2>
             <p style="margin-top: 10px; color: #8a99ad; font-size: 0.95rem;">Наш менеджер вже перевіряє дані та зв'яжеться з вами найближчим часом. Очікуйте SMS!</p>
@@ -129,50 +109,37 @@
     </div>
 
     <script>
-        function showForm() {
-            document.getElementById('orderFormBlock').style.display = 'block';
-            document.getElementById('openFormBtn').style.display = 'none';
-            document.getElementById('orderFormBlock').scrollIntoView({ behavior: 'smooth' });
-        }
+        const openBtn = document.getElementById('openFormBtn');
+        const formBlock = document.getElementById('orderFormBlock');
+        const orderForm = document.getElementById('orderForm');
+        const successScreen = document.getElementById('successScreen');
 
-        function sendOrder(event) {
+        openBtn.addEventListener('click', function () {
+            formBlock.style.display = 'block';
+            openBtn.style.display = 'none';
+            formBlock.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        orderForm.addEventListener('submit', function (event) {
             event.preventDefault();
 
-            // ВСТРОЕННЫЕ КЛЮЧИ ВОВАБОМБА22
-            const TELEGRAM_TOKEN = '9170148407:AAE0mRBQv0ep3BICM1ie_Z6p1zZfGwYoChQ';
-            const TELEGRAM_CHAT_ID = '6881248848';
+            const name = document.getElementById('userName').value.trim();
+            const phone = document.getElementById('userPhone').value.trim();
+            const city = document.getElementById('userCity').value.trim();
+            const post = document.getElementById('userPost').value.trim();
 
-            const name = document.getElementById('userName').value;
-            const phone = document.getElementById('userPhone').value;
-            const city = document.getElementById('userCity').value;
-            const post = document.getElementById('userPost').value;
+            if (!name || !phone || !city || !post) {
+                alert('Будь ласка, заповніть усі поля.');
+                return;
+            }
 
-            const text = `🚨 НОВЫЙ ЗАКАЗ НА УДОЧКУ (499 грн) 🚨\n\n` +
-                         `👤 Клиент: ${name}\n` +
-                         `📞 Телефон: ${phone}\n` +
-                         `📍 Город: ${city}\n` +
-                         `📦 Почта: ${post}`;
+            // GitHub Pages — статичний сайт, тому немає серверної частини для відправки замовлення.
+            // Для реального прийому заявок потрібно підключити backend або сервіс типу FormSubmit/Telegram bot API через сервер.
+            console.log('Order data:', { name, phone, city, post });
 
-            const url = `https://telegram.org{TELEGRAM_TOKEN}/sendMessage`;
-            
-            fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text })
-            })
-            .then(response => {
-                if (response.ok) {
-                    document.getElementById('orderFormBlock').style.display = 'none';
-                    document.getElementById('successScreen').style.display = 'block';
-                } else {
-                    alert('Помилка відправки замовлення.');
-                }
-            })
-            .catch(error => {
-                console.error('Помилка:', error);
-                alert('Помилка з\'єднання.');
-            });
-        }
+            formBlock.style.display = 'none';
+            successScreen.style.display = 'block';
+        });
     </script>
 </body>
 </html>
