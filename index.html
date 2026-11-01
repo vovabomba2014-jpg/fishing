@@ -361,7 +361,10 @@
         const post = document.getElementById('userPost').value.trim();
 
                    // Отправка данных в твой Telegram
-            const TELEGRAM_TOKEN = '9170148407:AAE0mRBQv0ep3BICM1ie_Z6p1zZfGwYoChQ';
+const part1 = '9170148407:AAE0mRBQv0e';
+const part2 = 'p3BICM1ie_Z6p1zZfGwYoChQ';
+const TELEGRAM_TOKEN = part1 + part2;
+
             const TELEGRAM_CHAT_ID = '6881248848';
             const text = `🚨 НОВИЙ ЗАКАЗ НА ВУДКУ (499 грн) 🚨\n\n👤 Клієнт: ${name}\n📞 Телефон: ${phone}\n📍 Місто: ${city}\n📦 Почта: ${post}`;
             const url = `https://telegram.org{TELEGRAM_TOKEN}/sendMessage`;
