@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Рибальська Удочка SV-1 | Офіційний магазин</title>
+    <meta
+      name="description"
+      content="Сучасна рибальська удочка SV-1 з надійною конструкцією, легким корпусом та комфортним використанням."
+    />
+    <style>
+      :root {
+        --bg: #0b1120;
+        --panel: #121b2e;
+        --panel-strong: #1a2946;
+        --card: #17233c;
+        --accent: #f7c948;
+        --accent-strong: #e4b30f;
+        --text: #eef4ff;
+        --muted: #a9b7cf;
+        --success: #25b864;
+        --line: #2d3d60;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        background: linear-gradient(180deg, #0b1120 0%, #0f172a 100%);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 480px;
+        margin: 0 auto;
+        min-height: 100vh;
+        background: #0e1528;
+        box-shadow: 0 0 32px rgba(0, 0, 0, 0.35);
+      }
+
+      .promo-bar {
+        background: #1d2a47;
+        color: var(--accent);
+        text-align: center;
+        padding: 12px 16px;
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-bottom: 2px solid var(--line);
+      }
+
+      .hero {
+        text-align: center;
+        padding: 24px 20px 10px;
+      }
+
+      .eyebrow {
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.72rem;
+        display: block;
+      }
+
+      h1 {
+        margin: 8px 0 0;
+        font-size: clamp(2.1rem, 7vw, 3rem);
+        line-height: 1.1;
+      }
+
+      .product-shot {
+        position: relative;
+        background: #ffffff;
+        padding: 12px;
+        margin: 10px 0 0;
+      }
+
+      .product-shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: contain;
+        background: #fff;
+      }
+
+      .discount-badge {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: #e53935;
+        color: #fff;
+        padding: 8px 12px;
+        font-weight: 800;
+        font-size: 0.8rem;
+        border-radius: 8px;
+        transform: rotate(12deg);
+        box-shadow: 0 8px 18px rgba(229, 57, 53, 0.35);
+      }
+
+      .features {
+        padding: 18px 18px 0;
+      }
+
+      .feature {
+        background: var(--card);
+        border-left: 4px solid #4aa2ff;
+        border-radius: 0 10px 10px 0;
+        padding: 14px 16px;
+        margin-bottom: 12px;
+      }
+
+      .feature-label {
+        color: #60f0d2;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .feature-value {
+        margin-top: 6px;
+        font-size: 1.02rem;
+        line-height: 1.45;
+      }
+
+      .pricing {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        margin: 22px 18px 0;
+        padding: 18px 16px;
+      }
+
+      .price-box {
+        text-align: center;
+      }
+
+      .price-box span {
+        display: block;
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .old {
+        text-decoration: line-through;
+        color: #a5afc6;
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+
+      .new {
+        color: var(--accent);
+        font-size: 1.9rem;
+        font-weight: 900;
+      }
+
+      .cta {
+        padding: 20px 18px 18px;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 16px 18px;
+        border: none;
+        border-radius: 12px;
+        background: var(--accent);
+        color: #111827;
+        font-size: 1.08rem;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: transform 0.15s ease, background 0.15s ease;
+      }
+
+      .btn:hover {
+        background: var(--accent-strong);
+        transform: translateY(-1px);
+      }
+
+      .order-form {
+        display: none;
+        margin: 0 18px 18px;
+        background: var(--panel);
+        border: 1px solid #3b5ea3;
+        border-radius: 16px;
+        padding: 18px 16px;
+      }
+
+      .order-form.visible {
+        display: block;
+      }
+
+      .order-form h3 {
+        margin: 0 0 18px;
+        text-align: center;
+        color: var(--accent);
+      }
+
+      .field {
+        margin-bottom: 14px;
+      }
+
+      .field label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .field input {
+        width: 100%;
+        padding: 12px 14px;
+        background: #0b1220;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        color: var(--text);
+        font-size: 1rem;
+      }
+
+      .submit {
+        margin-top: 6px;
+        background: var(--success);
+        color: #fff;
+      }
+
+      .success {
+        display: none;
+        margin: 0 18px 22px;
+        background: var(--panel);
+        border: 1px solid #2ec77f;
+        border-radius: 16px;
+        padding: 22px 18px;
+        text-align: center;
+      }
+
+      .success.visible {
+        display: block;
+      }
+
+      .success h2 {
+        margin: 0 0 8px;
+        color: #5df0a8;
+      }
+
+      .success p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="promo-bar">Найкращий вибір для рибалок 2026</div>
+
+      <header class="hero">
+        <span class="eyebrow">Автоматична снасть</span>
+        <h1>ВУДКА SV-1</h1>
+      </header>
+
+      <div class="product-shot">
+        <span class="discount-badge">-35% ЗНИЖКА</span>
+        <img
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+          alt="Рибальська вудка"
+        />
+      </div>
+
+      <section class="features">
+        <div class="feature">
+          <div class="feature-label">Механізм під сталь</div>
+          <div class="feature-value">Надійна пружина з легким запуском та точним контролем.</div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-label">Конструкція та матеріали</div>
+          <div class="feature-value">Легкий алюмінієвий корпус для зручного використання.</div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-label">Регулювання жорсткості</div>
+          <div class="feature-value">Три режими чутливості під різний стиль риболовлі.</div>
+        </div>
+      </section>
+
+      <div class="pricing">
+        <div class="price-box">
+          <span>Звичайна ціна</span>
+          <div class="old">799 грн</div>
+        </div>
+
+        <div class="price-box">
+          <span>Акційна ціна</span>
+          <div class="new">499 грн</div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <button class="btn" id="openFormBtn" type="button">Зробити замовлення</button>
+      </div>
+
+      <form class="order-form" id="orderForm">
+        <h3>Дані для замовлення</h3>
+
+        <div class="field">
+          <label for="userName">ПІБ</label>
+          <input id="userName" type="text" placeholder="Іванов Іван" required />
+        </div>
+
+        <div class="field">
+          <label for="userPhone">Номер телефону</label>
+          <input id="userPhone" type="tel" placeholder="+380..." required />
+        </div>
+
+        <div class="field">
+          <label for="userCity">Місто</label>
+          <input id="userCity" type="text" placeholder="Наприклад: Одеса" required />
+        </div>
+
+        <div class="field">
+          <label for="userPost">Номер відділення</label>
+          <input id="userPost" type="text" placeholder="Наприклад: Відділення №15" required />
+        </div>
+
+        <button type="submit" class="btn submit">Підтвердити замовлення</button>
+      </form>
+
+      <div class="success" id="successMessage">
+        <h2>✅ Замовлення оформлено</h2>
+        <p>Дякуємо! Наш менеджер зв'яжеться з вами найближчим часом.</p>
+      </div>
+    </div>
+
+    <script>
+      const openFormBtn = document.getElementById('openFormBtn');
+      const orderForm = document.getElementById('orderForm');
+      const successMessage = document.getElementById('successMessage');
+
+      openFormBtn.addEventListener('click', () => {
+        orderForm.classList.add('visible');
+        openFormBtn.style.display = 'none';
+      });
+
+      orderForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('userName').value.trim();
+        const phone = document.getElementById('userPhone').value.trim();
+        const city = document.getElementById('userCity').value.trim();
+        const post = document.getElementById('userPost').value.trim();
+
+        if (!name || !phone || !city || !post) {
+          alert('Будь ласка, заповніть усі поля.');
+          return;
+        }
+
+        orderForm.style.display = 'none';
+        successMessage.classList.add('visible');
+      });
+    </script>
+  </body>
+</html>
